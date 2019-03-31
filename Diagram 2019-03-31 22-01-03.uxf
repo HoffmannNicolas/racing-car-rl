@@ -1,0 +1,77 @@
+<diagram program="umletino" version="14.3.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>290</x><y>323</y><w>160</w><h>280</h></coordinates><panel_attributes>&lt;&lt;Car&gt;&gt;
+--
+Instance Variables :
+ - name
+ - lidar
+ - pose
+ - linearVelocity
+ - angularVelocity
+ - linearAcceleration
+ - angularAcceleration
+ - model
+ - timeOfLastStateUpdate
+--
+Methods :
+ - init_model()
+ - draw(verbose)
+ - setPose(pose)
+ - takeAction(obstaclesList)
+ - test()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>470</x><y>473</y><w>480</w><h>170</h></coordinates><panel_attributes>&lt;&lt;RaceTrack&gt;&gt;
+--
+Instance Variables :
+ - mapBorder
+ - startingPose
+ - obstaclesList
+Lambda :
+ - isVisible(point)
+--
+Methods :
+ - generateCircularTrack(numberOfVertices, averageRadius, trackWidth, trackDifficulty)
+ - test()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>470</x><y>243</y><w>170</w><h>210</h></coordinates><panel_attributes>&lt;&lt;World&gt;&gt;
+--
+Instance Variables :
+ - mapBorder
+ - track
+ - carsList
+--
+Methods :
+ - createTrack()
+ - addCars(numberOfCars)
+ - placeCarsInTrack()
+ - moveCar(car, carNumber, t)
+ - moveCars(t)
+ - makeAgentsAct()
+ - test()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>660</x><y>253</y><w>360</w><h>200</h></coordinates><panel_attributes>&lt;&lt;Lidar&gt;&gt;
+--
+Instance Variables :
+ - fieldOfView
+ - numberOfRays
+ - rayLength
+ - lastMeasurements
+--
+Methods :
+ - fetArrivingPoint(rayNumber, emittingPoint, angle, maxDistance)
+ - measureAgainstObstacle(carPose, obstacle_figure)
+ - measure(carPose, obstacle)
+ - draw(carPose, verbose)
+ - test()
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>680</x><y>64</y><w>250</w><h>80</h></coordinates><panel_attributes>Data Structures :
+ - Point := [x, y]
+ - Segment := [point1, point2]
+ - Figure := [segment1, segment2..]
+ - DrawingList := [point1, point2, point3..]
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>420</x><y>60</y><w>330</w><h>150</h></coordinates><panel_attributes>Utility Methods : 
+- drawingPointsToFigure(drawingPoints)
+ - segmentToLineCoeff(segment)
+ - segmentsTouch(segment1, segment2)
+ - figuresTouch(figure1, figure2)
+
+Utility Lambdas :
+ - distanceL2(p1, p2)
+ - carRef_to_absoluteRef(point, carAbsPos, carAbsAngle)
+
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element></diagram>
