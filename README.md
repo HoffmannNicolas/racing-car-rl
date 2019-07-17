@@ -1,2 +1,2 @@
 # racing-car-env
-Reinforcement-Learning environment of racing cars (with animation) in a Colab notebook.
+Reinforcement-Learning environment of racing cars, in a notebook made for Colab.
